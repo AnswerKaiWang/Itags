@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lytips.ITags.repository.ChatRepo" >
+ <sql id="chat">
+ 	select user_id as userId, person_user_id as personUserId,content, 
+    create_time as createTime from t_chat 
+ </sql>
+ <sql id="linkMan">
+ 	SELECT DISTINCT
+	b.user_id AS userId,
+	b.head,
+	b.user_name AS userName 
+	FROM
+	t_chat a,
+	t_user_info b
+ </sql>
+ 
+ 
+  <select id="queryByParams" parameterType="chatQuery" resultType = "Chat">
+     select * from ( <include refid="chat"/>
+     <where>
+       user_id = #{userId}
+   	   and person_user_id = #{personUserId}
+     </where>
+     union
+     <include refid="chat"/>
+     <where>
+       user_id = #{personUserId}
+   	   and person_user_id = #{userId}
+     </where>
+     ) as a order by createTime
+  </select>
+  
+  
+  <select id="queryByParams2" parameterType="chatQuery" resultType = "Chat">
+    select user_id as userId, person_user_id as personUserId,content, 
+    create_time as createTime from t_chat  
+     <where>
+		 user_id = #{personUserId} and person_user_id = #{userId}
+       <if test = "linkDate != null">
+         and create_time <![CDATA[> #{linkDate}]]>
+       </if>
+		order by create_time 
+     </where>
+  </select>
+  
+  <select id="queryLinkMan" parameterType="Integer" resultType = "UserInfo">
+  	<include refid="linkMan"/>
+    <where>
+	 a.person_user_id = b.user_id 
+	 AND a.user_id = #{userId}
+    </where>
+    union
+    <include refid="linkMan"/>
+     <where>
+	 a.user_id = b.user_id 
+	 AND a.person_user_id = #{userId}
+    </where>
+    
+    
+  </select>
+  
+</mapper>

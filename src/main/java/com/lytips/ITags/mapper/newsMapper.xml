@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lytips.ITags.repository.NewsRepo" >
+
+<insert id = "insertBatch" parameterType="java.util.List">
+ 	insert ignore into t_news(title, author, pic, url, publish_time, type, comment, page) values
+ 	<foreach collection="list" item = "item" index="index" separator=",">
+ 		(#{item.title}, #{item.author}, #{item.pic}, #{item.url}, #{item.publishTime},
+ 		 #{item.type}, #{item.comment}, #{item.page})
+ 	</foreach>
+</insert>
+  
+ <insert id = "insertNewsIndexBatch" parameterType="java.util.List">
+ 	insert ignore into t_news_index(title, type, create_time, state) values
+ 	<foreach collection="list" item = "item" index="index" separator=",">
+ 		(#{item.title}, #{item.type}, DATE_FORMAT(NOW(),'%m-%d'), 1)
+ 	</foreach>
+ </insert> 
+</mapper>

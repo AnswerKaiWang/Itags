@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lytips.ITags.repository.MsgRepo" >
+ <sql id="msg">
+ 	select id, user_id as userId, content, transfer_count as transferCount, 
+ 	comment_count as commentCount, good_count as goodCount,
+ 	 state, create_time as createTime, imgs, store_count as storeCount from t_msg
+ </sql>
+ 
+  <select id="queryPersonMsg" parameterType="msgQuery" resultType = "Msg">
+     <include refid="msg"/>
+    <if test="type == 'other'">
+    	<where>
+       		user_id = #{personUserId} and visibility = 1
+     	</where>
+    </if>
+     <if test="type == 'other-'">
+    	<where>
+       		user_id = #{userId}
+     	</where>
+    </if>
+    order by create_time desc
+  </select>
+  
+  
+</mapper>

@@ -1,0 +1,147 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation=" 
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 扫描com.lytips.ITags.controller 下包 -->
+	<context:component-scan base-package="com.lytips.ITags.controller" />
+
+	<!-- mvc 请求映射 处理器与适配器配置 -->
+	<mvc:annotation-driven>
+		<!-- json 数据转换 -->
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<bean
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="suffix" value=".ftl" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize">
+			<value>104857600</value>
+		</property>
+		<property name="maxInMemorySize">
+			<value>4096</value>
+		</property>
+	</bean>
+
+	<!-- 全局异常配置 -->
+	<bean class="com.lytips.base.exception.GlobalExceptionResolver">
+		<property name="defaultErrorView" value="error"></property>
+		<property name="exceptionAttribute" value="ex"></property>
+
+	</bean>
+
+	<!-- 静态资源放行处理 2中方式 -->
+	<mvc:default-servlet-handler />
+
+	<!-- 配置非法请求拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 拦截范围：拦截所有请求 静态资源 css js images -->
+			<mvc:mapping path="/**" />  <!-- js/index.js -->
+			<mvc:exclude-mapping path="/css/**" />
+			<mvc:exclude-mapping path="/js/**" />
+			<mvc:exclude-mapping path="/images/**" />
+			<mvc:exclude-mapping path="/login" />  <!-- 登录页面请求 -->
+			<mvc:exclude-mapping path="/user/**" /> <!-- 登录请求 -->
+			<mvc:exclude-mapping path="/news/**" />
+			<mvc:exclude-mapping path="/kaptcha/getKaptchaImage" />
+			<mvc:exclude-mapping path="/upload/**" />
+			<mvc:exclude-mapping path="/statics/**" />
+			<mvc:exclude-mapping path="/ueditor/**" />
+			<bean class="com.lytips.ITags.inerceptor.UserLoginInterceptor"></bean>
+
+		</mvc:interceptor>
+
+
+	</mvc:interceptors>
+	<!--图片验证码配置 -->
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+		<property name="config">
+			<bean class="com.google.code.kaptcha.util.Config">
+				<constructor-arg>
+					<props>
+						<prop key="kaptcha.border">yes</prop><!--是否有边框 -->
+						<prop key="kaptcha.border.color">105,179,90</prop><!--设置边框颜色 -->
+						<prop key="kaptcha.textproducer.font.color">blue</prop><!--验证码文本字符颜色 默认为Color.BLACK -->
+						<prop key="kaptcha.session.key">code</prop><!--验证码 -->
+						<prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop><!--设置字体样式 -->
+						<prop key="kaptcha.border.thickness"></prop><!--边框粗细度 默认为1 -->
+						<prop key="kaptcha.producer.impl"></prop><!--验证码生成器 默认为DefaultKaptcha -->
+						<prop key="kaptcha.textproducer.impl"></prop><!-- 验证码文本生成器 默认为DefaultTextCreator -->
+						<prop key="kaptcha.textproducer.char.string"></prop><!--验证码文本字符内容范围 默认为abcde2345678gfynmnpwx -->
+						<prop key="kaptcha.textproducer.char.length">4</prop><!-- 验证码文本字符长度 默认为5 -->
+						<prop key="kaptcha.textproducer.font.size">50</prop><!--验证码文本字符大小 默认为40 -->
+						<prop key="kaptcha.textproducer.char.space">6</prop>    <!--验证码文本字符间距 默认为2 -->
+						<prop key="kaptcha.image.width">200</prop>    <!--验证码图片宽度 默认为200 -->
+						<prop key="kaptcha.image.height">60</prop> <!--验证码图片高度 默认为40 -->
+					</props>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+
+	<bean id="msgDirective" class="com.lytips.ITags.derective.MsgDerective" />
+	<bean id="stateDirective" class="com.lytips.ITags.derective.StateDirective" />
+	<bean id="extraMsgDirective" class="com.lytips.ITags.derective.ExtraMsgDerective" />
+	<bean id="userInfoDirective" class="com.lytips.ITags.derective.UserInfoDirective" />
+	<bean id="followDirective" class="com.lytips.ITags.derective.FollowDirective " />
+	<bean id="followUserDirective" class="com.lytips.ITags.derective.FollowUserDirective " />
+	<bean id="noticeDirective" class="com.lytips.ITags.derective.NoticeDirective " />
+	<bean id="noticeMsgDirective" class="com.lytips.ITags.derective.NoticeMsgDirective " />
+	<bean id="noticeExtraMsgDirective" class="com.lytips.ITags.derective.NoticeExtraMsgDirective " />
+	<bean id="personDirective" class="com.lytips.ITags.derective.PersonDirective " />
+	<bean id="remarkDirective" class="com.lytips.ITags.derective.RemarkDirective " />
+	<bean id="chatCountDirective" class="com.lytips.ITags.derective.ChatCountDirective " />
+	<bean id="personPicDirective" class="com.lytips.ITags.derective.PersonPicDirective " />
+
+	<!-- 视图配置 -->
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/views/" />
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="msgDirective" value-ref="msgDirective" />
+				<entry key="extraMsgDirective" value-ref="extraMsgDirective" />
+				<entry key="stateDirective" value-ref="stateDirective" />
+				<entry key="userInfoDirective" value-ref="userInfoDirective" />
+				<entry key="followDirective" value-ref="followDirective" />
+				<entry key="followUserDirective" value-ref="followUserDirective" />
+				<entry key="noticeDirective" value-ref="noticeDirective" />
+				<entry key="noticeMsgDirective" value-ref="noticeMsgDirective" />
+				<entry key="personDirective" value-ref="personDirective" />
+				<entry key="noticeExtraMsgDirective" value-ref="noticeExtraMsgDirective" />
+				<entry key="remarkDirective" value-ref="remarkDirective" />
+				<entry key="chatCountDirective" value-ref="chatCountDirective" />
+				<entry key="personPicDirective" value-ref="personPicDirective" />
+			</map>
+		</property>
+		<property name="freemarkerSettings"><!-- 设置FreeMarker环境属性 -->  
+           <props>  
+               <prop key = "template_exception_handler">com.lytips.base.exception.FreemarkerExceptionHandler</prop>  
+           </props>  
+       </property>  
+	</bean>
+
+</beans>

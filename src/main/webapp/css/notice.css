@@ -1,0 +1,22 @@
+.d1 {
+	margin: 0 auto;
+	margin-top: 60px;
+	width: 900px;
+	padding: 10px;
+}
+
+.d2 {
+	float: right;
+}
+
+.comment {
+	width: 850px;
+	background: rgba(158, 158, 158, 0.09);
+	padding: 6px;
+	color: #333;
+	font-size: 15px;
+}	
+
+.d1 a {
+	text-decoration: none;
+}

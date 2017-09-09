@@ -1,0 +1,52 @@
+.d1 {
+	margin: 0 auto;
+	margin-top: 60px;
+	width: 900px;
+	padding: 10px;
+}
+
+.p1 img {
+	height: 60px;
+	width: 60px;
+	border-radius: 60px;
+	display: block;
+	float: left;
+}
+
+.p2 {
+	float: left;
+	padding: 5px;
+	margin-left: 10px;
+}
+
+.p3 {
+	display: inline-block;
+	height: 20px;
+	width: 60px;
+	text-align: center;
+}
+
+.p4 {
+	margin-top: 5px;
+	margin-left: -10px;
+}
+
+.border {
+	border-right: 1px solid #ddd;
+}
+
+.p1 {
+	height: 80px;
+	width: 500px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 10px;
+	background: white;
+	margin-bottom: 10px;
+}
+
+
+.temp2 {
+	text-align: center;
+	margin-top: 100px;
+}

@@ -1,0 +1,10 @@
+/com/
+/db.properties
+/generatorConfig.xml
+/log4j.properties
+/log4j2.properties
+/mybatis-crawler.xml
+/mybatis.xml
+/servlet-context.xml
+/spring.xml
+/webdefault.xml

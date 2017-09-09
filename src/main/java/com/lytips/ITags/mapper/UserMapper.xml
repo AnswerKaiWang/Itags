@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lytips.ITags.repository.UserRepo" >
+	 <insert id = "insertAgeCache" parameterType="java.util.List">
+ 	insert into t_age_cache(user_id, _60, _60y, _70y, _80y, _90y, _00y, unWrite, type) values
+ 	<foreach collection="list" item = "item" index="index" separator=",">
+ 		(#{item.userId}, #{item._60}, #{item._60y}, #{item._70y}, #{item._80y},
+ 		 #{item._90y}, #{item._00y}, #{item.unWrite}, #{item.type})
+ 	</foreach>
+ </insert>
+  
+</mapper>

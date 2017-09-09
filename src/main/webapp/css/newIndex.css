@@ -1,0 +1,384 @@
+ #head {
+	float: right;
+	height: 40px;
+	width: 40px;
+	border-radius: 40px;
+	margin-top: 5px;
+}
+
+.nickName {
+	float: right;
+	margin-right: 50px;
+}
+
+#message {
+	float: right;
+	margin-right: 10px;
+}
+
+.sicon {
+	margin-top: 12px;
+	border: 0px;
+	background: #f8f8f8;
+}
+
+#editBlock {
+	z-index: 5;
+	padding: 20px;
+	position: fixed;
+	left: 435px;
+	top: 100px;
+	display: none;
+	border-top: 2px solid #fa7f40;
+	border-radius: 5px;
+	background: white;
+ 	box-shadow: 2px 3px 8px green;
+ 	height:400px;
+}
+#editBlock a {
+	text-decoration:none;
+	font-size: 24px;
+	position: absolute;
+	right: 10px;
+	top: 1px;
+
+}
+
+ #editBlock .visibility {
+	width: 120px;
+}
+
+#editBlock .btnGroup {
+	margin-top: 20px;
+}
+
+#editBlock .btn {
+	float: right;
+	margin-top: -35px;
+}
+
+ a{
+	text-decoration:none;
+}
+.bootomBac {
+	position: fixed;
+	bottom: 0px;
+	z-index: 10;
+	height: 40px;
+	width: 100%;
+	border: 1px solid #ddd;
+	background: #f8f8f8;
+	text-align: center;
+	padding: 5px;
+	font-size: 10px;
+}
+.bootomBac a {
+	color: black;
+	text-decoration:none;
+}
+#message a {
+	line-height: 50px;
+	margin-right: 10px;
+	text-decoration: none;
+	color: #777;
+}
+
+.blank {
+	height: 100px;
+	width: 100%;
+	background: black;
+}
+.navbar {
+	border-top: 1px solid #fa7f40;
+	box-shadow: 2px 3px 8px gray;
+}
+
+.temp1 {
+	width: 300px;
+	height: 450px;
+	border: 1px solid gray;
+	position: fixed;
+	right: 0px;
+	bottom: 5px;
+	border-radius: 4px;
+	box-shadow: -5px 2px 5px 0px rgba(54, 86, 244, 0.26);
+	background: white;
+	display: none;
+	animation: linkMan 1s;
+}
+
+@keyframes linkMan
+{
+	from {right: -100px;}
+	to {right: 0px;}
+}
+
+
+
+
+.chatIcon {
+	border: 1px solid #9E9E9E;
+	position: fixed;
+	right: 0px;
+	bottom: 5px;
+	padding: 5px;
+	border-radius: 5px;
+}
+.chatIcon a {
+	color: black;
+	text-decoration: none;
+}
+
+.temp1 a {
+	color: black;
+}
+
+.temp1 .t1 {
+	height: 50px;
+	width: 300px;
+	border-bottom: 1px solid gray;
+	text-align: center;
+	line-height: 50px;
+}
+
+.temp1 .t2 {
+	height: 365px;
+	padding: 10px;
+	font-size: 10px;
+	overflow: auto;
+}
+
+.temp1 .t3 {
+	height: 34px;
+}
+
+.t4 {
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+.img {
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+}
+
+.t5 {
+	border: 1px solid #ddd;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.left-mar {
+	margin-left: 5px;
+}
+
+.right-mar {
+	margin-right: 5px;
+}
+
+.temp1 .time{
+	display: inline-block;
+	background: gainsboro;
+	margin-left: 80px;
+	margin-bottom: 10px;
+}
+
+.x1 {
+	height: 50px;
+	border-bottom: 1px solid  gray;
+	text-align: center;
+	line-height: 50px;
+}
+
+.x2 {
+	height: 398px;
+	padding: 10px;
+	overflow: auto;
+}
+
+.x3 {
+	width: 270px;
+	height: 40px;
+	border-bottom: 1px solid #DDDDDD;
+	float: left;
+}
+.x3 span {
+	display: inline-block;
+	margin-left: 5px;
+	margin-top: 8px;
+}
+
+.x3:hover {
+	background: whitesmoke;
+}
+.x3 img {
+	height: 35px;
+	width: 35;
+	border-radius: 35px;
+	margin-top: 2px;
+	margin-left: 5px;
+}
+
+.x5 input {
+	width: 245px;
+	float: left;
+}
+
+.x5 a {
+	float: left;
+	margin-left: 5px;
+	margin-top: 7px;
+}
+
+.x5 {
+	width: 270px;
+	height: 50px;
+	border-bottom: 20px;
+}
+
+.b1 {
+	float: left;
+	margin-left: 5px;
+}
+
+.chat {
+	background: #217ff3;
+    color: white;
+}
+
+.t8 {
+	float: right;
+    border-radius: 17px;
+    width: 17px;
+    height: 17px;
+    background: #FF9800;
+    text-align: center;
+    line-height: 17px;
+    margin-right: 10px;
+    color: white;
+}
+
+.black {
+	color: #333;
+}
+
+.top {
+	color: #333;
+    margin-left: 50px;
+    
+}
+.navbar-form a{
+	text-decoration: none;
+} 
+
+.light {
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.p-data {
+	height: 230px;
+    width: 350px;
+    border: 1px solid #ddd;
+    position: absolute;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    background: white;
+}
+
+.p-top {
+	width: 350px;
+	height: 100px;
+	position: relative;
+}
+
+.p-top .detail {
+	width: 348px;
+    height: 42px;
+    position: absolute;
+    text-align: center;
+    top: 65%;
+    opacity: 0.3;
+    background: gray;
+}
+
+.p-top .detail2 {
+	position: absolute;
+	left: 46%;
+	color: white;
+    top: 65%;
+}
+
+.p-top .bac {
+	width: 348px;
+}
+
+.p-top .p-head {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	position: absolute;
+	top: 20%;
+	left: 45%;
+	border: 1px solid #ddd;
+}
+
+.p-top .detail .sex {
+	transform: rotate(-30deg);
+}
+
+.p-bottom {
+	padding: 10px;
+}
+
+.p-bottom1 {
+	width: 350px;
+	padding: 10px 30px 0 40px;
+	
+}
+
+.p-bottom1 .count {
+	width: 80px;
+	display: inline-block;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	font-weight: 700;
+}
+
+.r-border {
+	border-right: 1px solid #ddd;
+}
+
+.p-bottom .addr {
+	text-align: center;
+	height: 35px;
+    line-height: 35px;
+}
+
+.p-data .btn-group {
+	margin: 0 0 0 80px;
+}
+
+.p-data .followBtn {
+	margin: 0 0 0 80px;
+}
+
+.p-data .msg {
+	margin: 0 0 0 5px;
+}
+
+

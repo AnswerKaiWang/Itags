@@ -1,0 +1,179 @@
+.container {
+	margin-top: 70px;
+	margin-left: 150px;
+}
+
+.leftNav {
+	width: 83px;
+	height: 500px;
+	float: left;
+	position: fixed;
+	left: 120px;
+	
+}
+
+.subNav {
+	height: 47px;
+	text-align: center;
+	line-height: 50px;
+	color: black;
+	font-size: large;
+	margin-bottom: 3px;
+}
+
+.container a {
+	text-decoration: none;
+}
+
+.select {
+	background: #fa2f2f;
+	color: white;
+	border-radius: 5px;
+}
+
+
+.subNav:hover {
+	background: #fa2f2f;
+	color: white;
+	border-radius: 5px;
+}
+
+.rightNav {
+	float: left;
+	margin-left: 80px;
+	width: 700px;
+}
+
+.newsBlank {
+	width: 700px;
+	margin-top: 20px;
+}
+
+.news img {
+	height: 100px;
+	width: 160px;
+	float: left;
+}
+
+.news .content {
+	float: left;
+	margin-left: 20px;
+}
+
+.news {
+	width: 900px;
+	height: auto;
+	display: inline-block;
+	color: black;
+}
+
+.carousel {
+	width: 600px;
+}
+
+.item {
+	width: 600px;
+	height: 240px;
+}
+
+.item img {
+	width: 600px;
+}
+
+#backNewsIndex {
+	position: fixed;
+	top: 70px;
+	left: 50px;
+}
+
+.newsContent {
+	width: 520px;
+}
+
+.newsContent:hover {
+	color: #fa2f2f;
+}
+
+.news .subTitle {
+	color: #b1b1b1;
+    font-size: 14px;
+}
+
+.backToTop {
+	position: fixed;
+	bottom: 2px;
+	right: 2px;
+	display: none;
+	animation: toTop 0.5s;
+}
+
+@keyframes toTop {
+	from {
+		bottom: -10px;
+	}
+	to {
+		bottom: 2px;
+	}
+}
+
+.hotBlank {
+	width: 300px;
+    height: 600px;
+    float: left;
+    margin-left: 35px;
+}
+
+.hotBlank .title {
+	width: 300px;
+	font-weight: bold;
+    font-size: initial;
+    border-left: 3px solid #fa2f2f;
+    padding: 0 0 0 6px;
+    margin: 10px 0 20px 0;
+}
+
+.hotBlank .hotNews {
+	width:300px;
+}
+
+.hotNews .subTitle {
+	color: #000;
+	font-size: 18px;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.hotNews .newsDetail {
+	margin: 7px 0 20px 0;
+    font-size: 14px;
+    color: #ababab;
+}
+
+.hotNews .subTitle:hover {
+	color: #fa2f2f;
+}
+
+.hotBlank .report {
+	width: 300px;
+    margin: 20px 0 30px 0;
+}
+
+.bottomBlank {
+	width: 300px;
+	height: 160px;
+	background-color: #f4f5f6;
+    font-size: 12px;
+    color: #939393;
+    line-height: 2;
+    padding: 8px 20px;
+    text-align: left;
+}
+
+.bottomBlank a {
+	color: #939393;
+}
+
+
+
+
+

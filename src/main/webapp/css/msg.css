@@ -1,0 +1,160 @@
+.messageList {
+	width: 900px;
+	margin: 0 auto;
+	margin-top: 70px;
+}
+
+.messageTop {
+	width: 880px;
+}
+.message {
+	width: 900px;
+	height: auto;
+	border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px 0px #9E9E9E;;
+    
+}
+
+.messageTop .head {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	float: left;
+}
+.messageTop .personDetaill {
+	float: left;
+	margin-left: 10px;
+	margin-top: 7px;
+}
+
+.messageDetail {
+	float: left;
+	margin-left: 50px;
+	font-size: large;
+	width: 840px;
+}
+
+
+.messagePic {
+	float: left;
+	margin-left: 55px;
+	width: 850px;
+}
+
+
+.messagePic img {
+	width: 150px;
+	border: 2px solid whitesmoke;
+}
+.messageFoot {
+	float: left;
+	width: 850px;
+	padding: 10px;
+}
+
+.messageFoot a {
+	margin-left: 60px;
+	text-decoration:none;
+	color: black;
+}
+
+.adviceList {
+	display: none;
+}
+
+.adviceList .form-group {
+	width: 760px;
+	float: left;
+}
+
+.noborder {
+	border: 0px;
+}
+
+.adviceList .btn {
+	margin-left: 10px;
+}
+
+ .btnStyle {
+	float: left;
+	width: 210px;
+	border-right: 1px solid gainsboro;
+}
+
+.block {
+	display: inline-block;
+}
+.advlice img {
+	margin-left: 5px;
+	height: 40px;
+	width: 40px;
+	float: left;
+	border: 1px solid whitesmoke;
+	margin-right: 10px;
+}
+.adviceDetail {
+	width: 780px;
+	margin-left: 50px;
+}
+.advlice {
+	margin-left: 50px;
+}
+
+.adviceList {
+	background: #f2f2f5;
+	width: 880px;
+	padding: 10px;
+}
+.personDetaill {
+	margin-left: -50px;
+}
+.adviceTime a {
+	float: right;
+}
+
+.replyBlock {
+	background: #eaeaec;
+	padding: 10px;
+}
+
+h5 {
+	text-align: center;
+}
+.pagination {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 300px;
+}
+
+.pagination a{
+	z-index: 0;
+}
+
+.replyInput {
+	background: white;
+	padding: 10px;
+	height: 50px;
+		
+}
+
+.replyInput .form-control {
+	width: 670px;
+	float: left;
+}
+.replyInput .btn {
+	float: left;
+}
+
+.hide1 {
+	float: right;
+	color: black;
+}
+
+
+
+
+
+

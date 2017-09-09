@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <classPathEntry    location="E:/repository/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar"/>
+    <context id="DB2Tables"    targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/itags" userId="root" password="root">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.lytips.ITags.mapper" targetProject="D:/java/workspace_class_0523/spring_mybatis_02/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="com.lytips.ITags.mapper" targetProject="E:/EWorkspace/ITags/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lytips.ITags.repository" targetProject="E:/EWorkspace/ITags/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--生成对应表及类名如果没有指定则会把数据库中所有表全部执行-->
+        <table tableName="t_msg_index" domainObjectName="MsgIndex" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+    </context>
+</generatorConfiguration>
